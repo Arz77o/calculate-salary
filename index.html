@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>حساب الأجور</title>
-   <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
       <img src="Sources/logo.png" alt="ARz Logo" class="logo">
       <nav>
          <ul class="nav__link">
-            <li><a href="#طريقة الحساب">طريقة الحساب</a></li>
+            <li><a href="sources/salary2024.pdf" target="_blank">شبكة الأجور</a></li>
             <li><a href="#حساب الأجور">حساب الأجور</a></li>
          </ul>
       </nav>
@@ -30,7 +30,6 @@
          </div>
          <div class="text">Made By Arbouz..</div>
       </div>
-      <div class="card">
          <div class="loader">
             <p>موقع مخصص لحساب</p>
             <div class="words">
@@ -43,13 +42,74 @@
          </div>
       </div>
    </section>
-   <section class="container" id="حساب الأجور">
-      <div>
-         <span class="title">حساب الأجر</span>
+   <section class="container">
+         <div class="title">
+            <span id="حساب الأجور"></span>حساب الأجر</span>
+         </div>
+         <div class="calculate">
+            <h2>حساب الأجر الأساسي:</h2>
+            <input type="number" name="text" class="input" pattern="\d+" id="rank" placeholder="رقم الصنف" min="1"
+               max="17">
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+         <div class="calculate">
+            <h2>تعويضات الخبرة المهنية:</h2>
+            <input type="number" name="text" class="input" pattern="\d+" id="grade" placeholder="رقم الدرجة" min="1"
+               max="12">
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+         <div class="calculate">
+            <h2>حساب الأجر الرئيسي:</h2>
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+         <div class="calculate">
+            <h2>منحة دعم نشاط الإدارة:</h2>
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+         <div class="calculate">
+            <h2>منحة الإدارية المشتركة:</h2>
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+         <div class="calculate">
+            <h2>حساب الأجر الخام:</h2>
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+         <div class="calculate">
+            <h2>إقتطاعات الضمان الإجتماعي:</h2>
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+         <div class="calculate">
+            <h2>حساب الأجر الصافي:</h2>
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
       </div>
-
    </section>
-
+   <footer>
+   </footer>
    <script src="script.js"></script>
 </body>
 

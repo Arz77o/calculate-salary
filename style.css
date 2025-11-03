@@ -13,7 +13,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 150px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,14 +23,13 @@ header {
 .logo {
   width: 70px;
   height: auto;
-
 }
 
 li,
 a {
   font-family: "Reem Kufi", sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 15px;
   color: #EEEEEE;
   text-decoration: none;
 }
@@ -41,23 +40,22 @@ a {
 
 .nav__link li {
   display: inline-block;
-  padding: 0px 30px;
-}
-
-.nav__link li a {
-  transition: all 0.3s ease 0s;
+  padding: 0px 20px;
 }
 
 .nav__link li a:hover {
   color: #009199;
+  cursor: pointer;
 }
 
 .main {
-  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .card {
@@ -65,25 +63,26 @@ a {
   background-color: transparent
 }
 
+.card p {
+  color: white;
+  font-family: "Reem Kufi", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .loader {
   color: white;
   font-family: "Reem Kufi", sans-serif;
   font-weight: 500;
-  font-size: 30px;
-  -webkit-box-sizing: content-box;
+  font-size: 20px;
   box-sizing: content-box;
   height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  border-radius: 8px;
-  text-align: right;
+  text-align: center;
   direction: rtl;
   gap: 10px;
   justify-items: center;
-  position: absolute;
-  left: 40%;
-  top: 40%;
+  margin-bottom: 5em;
 }
 
 .words {
@@ -181,14 +180,12 @@ a {
   font-size: 1em;
   padding: 1.5em 1em;
   width: 12em;
-  margin: 100px auto;
+  margin: 15em 0 5em 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-  top: 5em;
-  left: 50px;
 }
 
 .terminal-header {
@@ -197,7 +194,7 @@ a {
   left: 0;
   right: 0;
   height: 1.5em;
-  background-color: #333;
+  background-color: rgb(34, 40, 49);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding: 0 0.4em;
@@ -246,28 +243,269 @@ a {
   margin-top: 1.5em;
 }
 
+
 .container {
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   max-width: 100%;
+  min-height: auto;
 }
 
 .title {
   color: white;
   font-family: "Reem Kufi", sans-serif;
   font-weight: 500;
-  font-size: 30px;
-  padding: 50px 0px;
-  text-align: center;
-  position: absolute;
-  right: 41%;
-  bottom: -35%;
+  font-size: 20px;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  transition: 0.7s ease;
+  padding: 10px 20px 15px 20px;
+  border:#e1b832 7px solid;
+  border-radius: 15em;
 }
 
 .title:hover {
-  color: #009199;
+  color: #eee;
   cursor: pointer;
+  transform: scale(1.1);
 }
 
+.calculate {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  text-align: right;
+  direction: rtl;
+  font-family: "Reem Kufi", sans-serif;
+  margin-right: 6em;
+  margin-left: auto;
+  margin-bottom: 2em;
+  border: rgb(82, 79, 79) 7px solid;
+  border-radius: 20px;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(41, 41, 41);
+}
+
+.calculate h2 {
+  color: #eee;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 10px;
+  background-color: rgb(41, 41, 41);
+  transition: 0.7s ease;
+}
+
+.calculate h2:hover {
+  color: #e1b832;
+  transform: scale(1.1);
+}
+
+.calculate p {
+  color: #e1b832;
+  font-family: "Reem Kufi", sans-serif;
+  padding: 10px 10px;
+  background-color: rgb(41, 41, 41);
+}
+
+.input {
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+  outline: none;
+  color: rgb(255, 255, 255);
+  margin: 10px 10px;
+}
+
+.input:invalid {
+  animation: justshake 0.3s forwards;
+  color: rgb(254, 19, 19);
+}
+
+@keyframes justshake {
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX-(5px);
+  }
+}
+
+.ui-btn {
+  --btn-default-bg: rgb(41, 41, 41);
+  --btn-padding: 15px 20px;
+  --btn-hover-bg: rgb(51, 51, 51);
+  --btn-transition: .3s;
+  --btn-letter-spacing: .1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: #FAC921;
+  --default-btn-color: #fff;
+  --font-size: 10px;
+  /* 👆 this field should not be empty */
+  --font-weight: 600;
+  --font-family: Menlo, Roboto Mono, monospace;
+  /* 👆 this field should not be empty */
+}
+
+/* button settings 👆 */
+
+.ui-btn {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+  margin: 10px 10px;
+}
+
+.ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span,
+.ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "#";
+  }
+
+  5% {
+    content: ".";
+  }
+
+  10% {
+    content: "^{";
+  }
+
+  15% {
+    content: "-!";
+  }
+
+  20% {
+    content: "#$_";
+  }
+
+  25% {
+    content: "№:0";
+  }
+
+  30% {
+    content: "#{+.";
+  }
+
+  35% {
+    content: "@}-?";
+  }
+
+  40% {
+    content: "?{4@%";
+  }
+
+  45% {
+    content: "=.,^!";
+  }
+
+  50% {
+    content: "?2@%";
+  }
+
+  55% {
+    content: "\;1}]";
+  }
+
+  60% {
+    content: "?{%:%";
+    right: 0;
+  }
+
+  65% {
+    content: "|{f[4";
+    right: 0;
+  }
+
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+
+  75% {
+    content: "'1_0<";
+    right: 0;
+  }
+
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+
+  90% {
+    content: "4";
+    right: 0;
+  }
+
+  95% {
+    content: "2";
+    right: 0;
+  }
+
+  100% {
+    content: "";
+    right: 0;
+  }
+}
