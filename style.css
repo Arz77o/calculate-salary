@@ -263,8 +263,6 @@ a {
   margin-bottom: 2em;
   transition: 0.7s ease;
   padding: 10px 20px 15px 20px;
-  border:#e1b832 7px solid;
-  border-radius: 15em;
 }
 
 .title:hover {

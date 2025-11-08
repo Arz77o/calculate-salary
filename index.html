@@ -57,12 +57,14 @@
          </div>
          <div class="calculate">
             <h2>تعويضات الخبرة المهنية:</h2>
-            <input type="number" name="text" class="input" pattern="\d+" id="grade" placeholder="رقم الدرجة" min="1"
+            <input type="number" name="text" class="input" pattern="\d+" id="category" placeholder="رقم الصنف" min="1"
+               max="17">
+            <input type="number" name="text" class="input" pattern="\d+" id="degree" placeholder="رقم الدرجة" min="1"
                max="12">
-            <button class="ui-btn" onclick="calculate()">
+            <button class="ui-btn" onclick="calculateCompensation()">
                <span>النتيجة</span>
             </button>
-            <p id="result"></p>
+            <p id="result1"></p>
          </div>
          <div class="calculate">
             <h2>حساب الأجر الرئيسي:</h2>
@@ -100,7 +102,14 @@
             <p id="result"></p>
          </div>
          <div class="calculate">
-            <h2>حساب الأجر الصافي:</h2>
+            <h2>إقتطاع الضريبي:</h2>
+            <button class="ui-btn" onclick="calculate()">
+               <span>النتيجة</span>
+            </button>
+            <p id="result"></p>
+         </div>
+          <div class="calculate">
+            <h2>أجر الصافي</h2>
             <button class="ui-btn" onclick="calculate()">
                <span>النتيجة</span>
             </button>
