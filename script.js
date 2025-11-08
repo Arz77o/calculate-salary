@@ -28,8 +28,7 @@ function calculate() {
         document.getElementById
         ("result").innerText =
             `الأجر الأساسي = قيمة الصنف (${value}) × 45 = ${salary}`;
-document.getElementById("basicValue").value = salary; // حفظ القيمة للأجر الرئيسي
-        updateTotal(); // حساب الأجر الرئيسي 
+        document.getElementById("basicValue").value = salary; 
     } else {
         document.getElementById("result").innerText =
             "رقم الصنف غير موجود. حاول رقمًا بين 1 و17.";
@@ -83,9 +82,10 @@ function calculateCompensation() {
 
     // عرض النتيجة بنفس أسلوبك
     document.getElementById("result1").innerText =
-        `تعويضات الخبرة المهنية = قيمة الدرجة (${value}) × 45 = ${compensation}`;
-document.getElementById("expValue").value = compensation; // حفظ القيمة
+        `تعويضات الخبرة المهنية = قيمة الدرجة (${value}) × 45 = ${compensation}`; 
+    document.getElementById("expValue").value = compensation; 
     updateTotal();
+
 }
 
 function updateTotal() {
