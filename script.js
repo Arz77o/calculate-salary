@@ -100,10 +100,5 @@ function calculateCompensation() {
     document.getElementById("supportValue").value = support;
     }
 
-    function calculateSupportAllowance() {
-    const total = parseFloat(document.getElementById("totalValue").value) || 0;
-    const support = total * 0.10;
-    document.getElementById("supportResult").innerText = "منحة دعم نشاط الإدارة: " + support.toFixed(2);
-    }
 
 
