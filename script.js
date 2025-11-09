@@ -103,6 +103,7 @@ function calculateCompensation() {
     document.getElementById("supportResult").innerText = "منحة دعم نشاط الإدارة: " + support.toFixed(2);
     }
 
+
     function calculateAdministrativeAllowance() {
     // جلب الأجر الرئيسي
     const total = parseFloat(document.getElementById("totalValue").value) || 0;
@@ -122,6 +123,6 @@ function calculateCompensation() {
     const allowance = total * percentage;
 
     // عرض النتيجة في عنصر HTML
-    document.getElementById("allowance Result").innerText =
+    document.getElementById("allowanceResult").innerText =
         "منحة الإدارية المشتركة: " + allowance.toFixed(2);
 }
