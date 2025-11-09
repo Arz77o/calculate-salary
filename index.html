@@ -132,12 +132,12 @@
          </div>
       <div class="calculate">
             <h2>حساب الأجر الصافي:</h2>
-            <input type="hidden" id="">
-            <button class="ui-btn" onclick="calculate()">
+            <input type="number" name="text" class="input" pattern="\d+" id="userNumber" placeholder="أدخل الرقم الضريبي">
+            <button class="ui-btn" onclick="calculateNetSalary()">
                <span>النتيجة</span>
             </button>
-            <p id="Result"></p>
-            <input type="hidden" id="">
+            <p id="netResult"></p>
+            <input type="hidden" id="netValue">
       </div>
       </div>
    </section>
@@ -148,6 +148,7 @@
 
 
 </html>
+
 
 
 
