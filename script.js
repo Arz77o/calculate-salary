@@ -29,6 +29,7 @@ function calculate() {
         ("result").innerText =
             `الأجر الأساسي = قيمة الصنف (${value}) × 45 = ${salary}`;
         document.getElementById("basicValue").value = salary; 
+        document.getElementById("savedRank").value = rank;
     } else {
         document.getElementById("result").innerText =
             "رقم الصنف غير موجود. حاول رقمًا بين 1 و17.";
@@ -80,6 +81,17 @@ function calculateCompensation() {
     // الحساب
     const compensation = value * 45;
 
+    const savedRank = parseInt(document.getElementById("savedRank").value);
+
+    if (!savedRank) {
+        document.getElementById("result1").innerText = " احسب الأجر الأساسي أولاً.";
+        return;
+    }
+
+    if (category !== savedRank) {
+        document.getElementById("result1").innerText = " رقم الصنف لا يطابق الصنف المستخدم في الأجر الأساسي.";
+        return;
+    }
     // عرض النتيجة بنفس أسلوبك
     document.getElementById("result1").innerText =
         `تعويضات الخبرة المهنية = قيمة الدرجة (${value}) × 45 = ${compensation}`; 
@@ -91,7 +103,7 @@ function calculateCompensation() {
     const basic = parseFloat(document.getElementById("basicValue").value) || 0;
     const exp = parseFloat(document.getElementById("expValue").value) || 0;
     const total = basic + exp;
-    document.getElementById("totalResult").innerText =
+    document.getElementById("totalValue").innerText =
         `الأجر الرئيسي = ${basic} + ${exp} = ${total}`;
     document.getElementById("totalValue").value = total;
     
@@ -139,3 +151,48 @@ function calculateCompensation() {
     document.getElementById("adminValue").value = allowance;
     }
 
+   function calculateGrossSalary() {
+  // القيم المحفوظة مسبقًا
+  const basic = parseFloat(document.getElementById("totalValue")?.value) || 0;
+  const support = parseFloat(document.getElementById("supportValue")?.value) || 0;
+  const admin = parseFloat(document.getElementById("adminValue")?.value) || 0;
+  const rank = parseInt(document.getElementById("savedRank")?.value) || 0; // رقم الصنف
+
+  // جدول المنحة الجزافية حسب الصنف (1 إلى 17)
+  const allowanceTable = {
+    1: 7700,
+    2: 7400,
+    3: 6900,
+    4: 6400,
+    5: 5700,
+    6: 5000,
+    7: 3800,
+    8: 3800,
+    9: 3100,
+    10: 3100,
+    11: 1500,
+    12: 1500,
+    13: 1500,
+    14: 1500,
+    15: 1500,
+    16: 1500,
+    17: 1500
+  };
+
+  const fixedAllowance = allowanceTable[rank] || 0;
+
+  if (basic === 0 || support === 0 || admin === 0 || rank === 0) {
+    document.getElementById("grossResult").innerText = "⚠️ الرجاء حساب كل المنح والأجر الرئيسي أولاً.";
+    return;
+  }
+
+  // حساب الأجر الخام
+  const gross = basic + support + admin + fixedAllowance;
+
+  // عرض النتيجة
+  document.getElementById("grossResult").innerText =
+    `الأجر الخام = ${basic} + ${support} + ${admin} + ${fixedAllowance} = ${gross}`;
+  
+  // حفظ القيمة
+  document.getElementById("grossValue").value = gross;
+}

@@ -78,7 +78,7 @@ a {
   box-sizing: content-box;
   height: 60px;
   display: flex;
-  text-align: center;
+  text-align: right;
   direction: rtl;
   gap: 10px;
   justify-items: center;

@@ -10,7 +10,7 @@
 
 <body>
    <header>
-      <img src="Sources/logo.png" alt="ARz Logo" class="logo">
+      <img src="Sources/logo.svg" alt="ARz Logo" class="logo">
       <nav>
          <ul class="nav__link">
             <li><a href="sources/salary2024.pdf" target="_blank">شبكة الأجور</a></li>
@@ -54,6 +54,8 @@
                <span>النتيجة</span>
             </button>
             <p id="result"></p>
+            <input type="hidden" id="basicValue">
+            <input type="hidden" id="savedRank">
          </div>
          <div class="calculate">
             <h2>تعويضات الخبرة المهنية:</h2>
@@ -73,7 +75,7 @@
             <button class="ui-btn" onclick="updateTotal()">
                <span>النتيجة</span>
             </button>
-            <p id="totalResult"></p>
+            <p id="totalValue"></p>
          </div>
          <div class="calculate">
             <h2>منحة دعم نشاط الإدارة:</h2>
@@ -92,14 +94,15 @@
                <span>النتيجة</span>
             </button>
             <p id="adminResult"></p>
-            <input type="hidden" id="adminResult">
+            <input type="hidden" id="adminValue">
          </div>
          <div class="calculate">
             <h2>حساب الأجر الخام:</h2>
-            <button class="ui-btn" onclick="calculate()">
+            <button class="ui-btn" onclick="calculateGrossSalary()">
                <span>النتيجة</span>
             </button>
-            <p id="result"></p>
+            <p id="grossResult"></p>
+            <input type="hidden" id="grossValue">
          </div>
          <div class="calculate">
             <h2>إقتطاعات الضمان الإجتماعي:</h2>
