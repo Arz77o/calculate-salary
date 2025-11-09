@@ -104,11 +104,11 @@ function calculateCompensation() {
     }
 
     function calculateAdministrativeAllowance() {
-    // جلب قيمة الأجر الرئيسي من عنصر موجود مسبقًا
-    const total = parseFloat(document.getElementById("totalValue").innerText) || 0;
+    // جلب الأجر الرئيسي
+    const total = parseFloat(document.getElementById("totalValue").value) || 0;
 
-    // جلب رقم الصنف من عنصر موجود مسبقًا
-    const rank = parseInt(document.getElementById("rank").innerText) || 0;
+    // جلب رقم الصنف
+    const rank = parseInt(document.getElementById("rank").value);
 
     // تحديد النسبة حسب الصنف
     let percentage = 0;
@@ -121,11 +121,7 @@ function calculateCompensation() {
     // حساب منحة الإدارية المشتركة
     const allowance = total * percentage;
 
-    // عرض النتيجة مع رقم عشريين فقط
-    document.getElementById("allowanceResult").innerText =
+    // عرض النتيجة
+    document.getElementById("adminResult").innerText =
         "منحة الإدارية المشتركة: " + allowance.toFixed(2);
-    }
-    
-
-
-
+}
