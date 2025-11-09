@@ -121,7 +121,7 @@ function calculateCompensation() {
     // حساب منحة الإدارية المشتركة
     const allowance = total * percentage;
 
-    // عرض النتيجة
-    document.getElementById("adminResult").innerText =
+    // عرض النتيجة في عنصر HTML
+    document.getElementById("allowance Result").innerText =
         "منحة الإدارية المشتركة: " + allowance.toFixed(2);
 }
