@@ -103,26 +103,34 @@ function calculateCompensation() {
     document.getElementById("supportResult").innerText = "منحة دعم نشاط الإدارة: " + support.toFixed(2);
     }
 
-
     function calculateAdministrativeAllowance() {
-    // جلب الأجر الرئيسي
+    // جلب الأجر الرئيسي بعد الحساب (الأجر الأساسي + تعويض الخبرة)
     const total = parseFloat(document.getElementById("totalValue").value) || 0;
 
-    // جلب رقم الصنف
-    const rank = parseInt(document.getElementById("rank").value);
+    // جلب رقم الصنف المستخدم في تعويضات الخبرة
+    const category = parseInt(document.getElementById("category").value) || 0;
+
+    // التحقق من الصنف
+    if (category < 1 || category > 17) {
+        document.getElementById("adminResult").innerText = "رقم الصنف غير موجود!";
+        return;
+    }
 
     // تحديد النسبة حسب الصنف
     let percentage = 0;
-    if (rank >= 1 && rank <= 10) {
+    if (category >= 1 && category <= 10) {
         percentage = 0.25; // 25%
-    } else if (rank >= 11 && rank <= 17) {
+    } else if (category >= 11 && category <= 17) {
         percentage = 0.40; // 40%
     }
 
     // حساب منحة الإدارية المشتركة
     const allowance = total * percentage;
 
-    // عرض النتيجة في عنصر HTML
-    document.getElementById("allowanceResult").innerText =
-        "منحة الإدارية المشتركة: " + allowance.toFixed(2);
-}
+    // عرض النتيجة
+    document.getElementById("adminResult").innerText =
+        `منحة الإدارية المشتركة = الأجر الرئيسي (${total}) × ${percentage*100}% = ${allowance.toFixed(2)}`;
+
+    // حفظ القيمة إذا احتجتها لاحقًا
+    document.getElementById("adminValue").value = allowance;
+    }
