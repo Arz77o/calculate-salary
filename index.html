@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>حساب الأجور</title>
-   <link rel="stylesheet" href="style.css"/>
+   <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
@@ -15,6 +16,7 @@
          <ul class="nav__link">
             <li><a href="sources/salary2024.pdf" target="_blank">شبكة الأجور</a></li>
             <li><a href="#حساب الأجور">حساب الأجور</a></li>
+            <li><a href="#حساب المردودية">حساب المردودية</a></li>
          </ul>
       </nav>
    </header>
@@ -30,155 +32,189 @@
          </div>
          <div class="text">Made By Arbouz..</div>
       </div>
-         <div class="loader">
-            <p>موقع مخصص لحساب</p>
-            <div class="words">
-               <span class="word">الأجر</span>
-               <span class="word">التعويضات</span>
-               <span class="word">المنح</span>
-               <span class="word">الإقتطاعات</span>
-               <span class="word">الأجر</span>
-            </div>
+      <div class="loader">
+         <p>موقع مخصص لحساب</p>
+         <div class="words">
+            <span class="word">الأجر</span>
+            <span class="word">المنح</span>
+            <span class="word">الإقتطاعات</span>
+            <span class="word">المردودية</span>
+            <span class="word">الأجر</span>
          </div>
+      </div>
       </div>
    </section>
    <section class="container">
-         <div class="title">
-            <span id="حساب الأجور"></span>حساب الأجر</span>
-         </div>
-         <div class="calculate">
-            <h2>حساب الأجر الأساسي:</h2>
-            <input type="number" name="text" class="input" pattern="\d+" id="rank" placeholder="رقم الصنف" min="1"
-               max="17">
-            <button class="ui-btn" onclick="calculate()">
-               <span>النتيجة</span>
-            </button>
-            <p id="result"></p>
-            <input type="hidden" id="basicValue">
-            <input type="hidden" id="savedRank">
-         </div>
-         <div class="calculate">
-            <h2>تعويضات الخبرة المهنية:</h2>
-            <input type="number" name="text" class="input" pattern="\d+" id="category" placeholder="رقم الصنف" min="1"
-               max="17">
-            <input type="number" name="text" class="input" pattern="\d+" id="degree" placeholder="رقم الدرجة" min="1"
-               max="12">
-            <button class="ui-btn" onclick="calculateCompensation()">
-               <span>النتيجة</span>
-            </button>
-            <p id="result1"></p>
-         </div>
-         <div class="calculate">
-            <h2>حساب الأجر الرئيسي:</h2>
-            <input type="hidden" id="basicValue">
-            <input type="hidden" id="expValue">
-            <button class="ui-btn" onclick="updateTotal()">
-               <span>النتيجة</span>
-            </button>
-            <p id="totalValue"></p>
-         </div>
-         <div class="calculate">
-            <h2>منحة دعم نشاط الإدارة:</h2>
-            <input type="hidden" id="totalValue">
-            <button class="ui-btn" onclick="calculateSupportAllowance()">
-               <span>النتيجة</span>
-            </button>
-            <p id="supportResult"></p>
-            <input type="hidden" id="supportValue">
-         </div>
-         <div class="calculate">
-            <h2>منحة الإدارية المشتركة:</h2>
-            <input type="hidden" id="category">
-            <input type="hidden" id="totalValue">
-            <button class="ui-btn" onclick= "calculateAdministrativeAllowance()">
-               <span>النتيجة</span>
-            </button>
-            <p id="adminResult"></p>
-            <input type="hidden" id="adminValue">
-         </div>
-         <div class="calculate">
-            <h2>حساب الأجر الخام:</h2>
-            <button class="ui-btn" onclick="calculateGrossSalary()">
-               <span>النتيجة</span>
-            </button>
-            <p id="grossResult"></p>
-            <input type="hidden" id="grossValue">
-         </div>
-         <div class="calculate">
-            <h2>إقتطاعات الضمان الإجتماعي:</h2>
-            <button class="ui-btn" onclick="calculateSocialSecurity()">
-               <span>النتيجة</span>
-            </button>
-            <p id="socialResult"></p>
-            <input type="hidden" id="socialValue">
-         </div>
-         <div class="calculate">
-            <h2>إقتطاع الضريبي:</h2>
-            <button class="ui-btn" onclick="calculateTaxableSalary()">
-               <span>النتيجة</span>
-            </button>
-            <p id="taxableResult"></p>
-            <input type="hidden" id="taxableValue">
-         </div>
-          <div class="calculate">
-            <h2>المنحة العائلية: </h2>
-             <input type="number" name="text" class="input" pattern="\d+" id="children" placeholder="عدد الأطفال">
-            <input type="checkbox" id="wifeCheck" placeholder="زوجة ماكثة في البيت">
-            <button class="ui-btn" onclick="calculateFamilyAllowance()">
-               <span>النتيجة</span>
-            </button>
-            <p id="familyResult"></p>
-             <input type="hidden" id="familyValue">
-         </div>
-      <div class="calculate">
-            <h2>حساب الأجر الصافي:</h2>
-            <input type="number" name="text" class="input" step="any" id="userNumber" placeholder="الرقم الضريبي">
-            <button class="ui-btn" onclick="calculateNetSalary()">
-               <span>النتيجة</span>
-            </button>
-            <p id="netResult"></p>
-            <input type="hidden" id="netValue">
+      <div class="title">
+         <span id="حساب الأجور"></span>حساب الأجر</span>
       </div>
+      <div class="calculate">
+         <h2>حساب الأجر الأساسي:</h2>
+         <input type="number" name="text" class="input" pattern="\d+" id="rank" placeholder="رقم الصنف" min="1"
+            max="17">
+         <button class="ui-btn" onclick="calculate()">
+            <span>النتيجة</span>
+         </button>
+         <p id="result"></p>
+         <input type="hidden" id="basicValue">
+         <input type="hidden" id="savedRank">
+      </div>
+      <div class="calculate">
+         <h2>تعويضات الخبرة المهنية:</h2>
+         <input type="number" name="text" class="input" pattern="\d+" id="category" placeholder="رقم الصنف" min="1"
+            max="17">
+         <input type="number" name="text" class="input" pattern="\d+" id="degree" placeholder="رقم الدرجة" min="1"
+            max="12">
+         <button class="ui-btn" onclick="calculateCompensation()">
+            <span>النتيجة</span>
+         </button>
+         <p id="result1"></p>
+      </div>
+      <div class="calculate">
+         <h2>حساب الأجر الرئيسي:</h2>
+         <input type="hidden" id="basicValue">
+         <input type="hidden" id="expValue">
+         <button class="ui-btn" onclick="updateTotal()">
+            <span>النتيجة</span>
+         </button>
+         <p id="totalValue"></p>
+      </div>
+      <div class="calculate">
+         <h2>منحة دعم نشاط الإدارة:</h2>
+         <input type="hidden" id="totalValue">
+         <button class="ui-btn" onclick="calculateSupportAllowance()">
+            <span>النتيجة</span>
+         </button>
+         <p id="supportResult"></p>
+         <input type="hidden" id="supportValue">
+      </div>
+      <div class="calculate">
+         <h2>منحة الإدارية المشتركة:</h2>
+         <input type="hidden" id="category">
+         <input type="hidden" id="totalValue">
+         <button class="ui-btn" onclick="calculateAdministrativeAllowance()">
+            <span>النتيجة</span>
+         </button>
+         <p id="adminResult"></p>
+         <input type="hidden" id="adminValue">
+      </div>
+      <div class="calculate">
+         <h2>حساب الأجر الخام:</h2>
+         <button class="ui-btn" onclick="calculateGrossSalary()">
+            <span>النتيجة</span>
+         </button>
+         <p id="grossResult"></p>
+         <input type="hidden" id="grossValue">
+      </div>
+      <div class="calculate">
+         <h2>إقتطاعات الضمان الإجتماعي:</h2>
+         <button class="ui-btn" onclick="calculateSocialSecurity()">
+            <span>النتيجة</span>
+         </button>
+         <p id="socialResult"></p>
+         <input type="hidden" id="socialValue">
+      </div>
+      <div class="calculate">
+         <h2>إقتطاع الضريبي:</h2>
+         <button class="ui-btn" onclick="calculateTaxableSalary()">
+            <span>النتيجة</span>
+         </button>
+         <p id="taxableResult"></p>
+         <input type="hidden" id="taxableValue">
+      </div>
+      <div class="calculate">
+         <h2>المنحة العائلية: </h2>
+         <input type="number" name="text" class="input" pattern="\d+" id="children" placeholder="عدد الأطفال">
+         <input type="checkbox" id="wifeCheck" placeholder="زوجة ماكثة في البيت">
+         <button class="ui-btn" onclick="calculateFamilyAllowance()">
+            <span>النتيجة</span>
+         </button>
+         <p id="familyResult"></p>
+         <input type="hidden" id="familyValue">
+      </div>
+      <div class="calculate">
+         <h2>حساب الأجر الصافي:</h2>
+         <input type="number" name="text" class="input" step="any" id="userNumber" placeholder="الرقم الضريبي">
+         <button class="ui-btn" onclick="calculateNetSalary()">
+            <span>النتيجة</span>
+         </button>
+         <p id="netResult"></p>
+         <input type="hidden" id="netValue">
+      </div>
+      </div>
+   </section>
+   <section class="container1">
+      <div class="title">
+         <span id="حساب المردودية"></span>حساب المردودية</span>
+      </div>
+      <div class="calculate">
+         <h2>منحة المردودية:</h2>
+         <input type="hidden" id="totalValue">
+         <input type="number" name="text" class="input" step="0.01" id="performanceRate" placeholder="النسبة المؤية" min="1"
+            max="30">
+         <button class="ui-btn" onclick="calculatePerformanceBonus()">
+            <span>النتيجة</span>
+         </button>
+         <p id="performanceResult"></p>
+         <input type="hidden" id="performanceValue">
+      </div>
+      <div class="calculate">
+         <h2>منحة المردودية&nbsp; لثلاثة&nbsp; شهور:</h2>
+         <button class="ui-btn" onclick="calculatePerformanceBonus3Months()">
+            <span>النتيجة</span>
+         </button>
+         <p id="performance3Result"></p>
+         <input type="hidden" id="performance3Value">
+      </div>
+      <div class="calculate">
+         <h2>الضمان الإجتماعي:</h2>
+         <button class="ui-btn" onclick="calculatePerformanceSocialSecurity()">
+            <span>النتيجة</span>
+         </button>
+         <p id="performanceSocialResult"></p>
+         <input type="hidden" id="performanceSocialValue">
+      </div>
+      <div class="calculate">
+         <h2>إقتطاع الضمان الإجتماعي:</h2>
+         <button class="ui-btn" onclick="calculateNetPerformance()">
+            <span>النتيجة</span>
+         </button>
+         <p id="netPerformanceResult"></p>
+         <input type="hidden" id="netPerformanceValue">
+      </div>
+      <div class="calculate">
+         <h2>إقتطاع الضريبي:</h2>
+         <button class="ui-btn" onclick="calculateTaxPerformance()">
+            <span>النتيجة</span>
+         </button>
+         <p id="performanceTaxResult"></p>
+         <input type="hidden" id="performanceTaxValue">
+      </div><div class="calculate">
+         <h2>المردود الصافي</h2>
+         <button class="ui-btn" onclick="calculateTotalPerformance()">
+            <span>النتيجة</span>
+         </button>
+         <p id="totalPerformanceResult"></p>
+         <input type="hidden" id="totalPerformanceValue">
       </div>
    </section>
    <footer>
       <div class="footerContainer">
-        <div class="socialIcons">
-            <a href="https://www.facebook.com/profile.php?id=61583335271001" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+         <div class="socialIcons">
+            <a href="https://www.facebook.com/profile.php?id=61583335271001" target="_blank"><i
+                  class="fa-brands fa-facebook"></i></a>
             <a href="https://github.com/Arz77o" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </div>
-    </div>
-    <div class="footerBottom">
-        <p>Copyright &copy;2025; Designed by <span class="designer">ARz</span></p>
-    </div>
-    <div class="disclaimer">
-      <h5>THIS WEBSITE WILL BE SHUTDOWN ON 2025/12/16</h5>
-    </div>
+         </div>
+      </div>
+      <div class="footerBottom">
+         <p>Copyright &copy;2025; Designed by <span class="designer">ARz</span></p>
+      </div>
+      <div class="disclaimer">
+         <h5>THIS WEBSITE WILL BE SHUTDOWN ON 2025/12/16</h5>
+
+      </div>
    </footer>
    <script src="script.js"></script>
 </body>
 
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
