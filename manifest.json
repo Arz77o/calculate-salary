@@ -1,0 +1,22 @@
+{
+  "name": "حساب الأجور",
+  "short_name": "حساب الأجر",
+  "description": "حساب أجور سريعة ودقيقة مع الضرائب والتأمينات",
+  "start_url": "/calcuate-salary/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://arz77o.github.io/calcuate-salary/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://arz77o.github.io/calcuate-salary/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
