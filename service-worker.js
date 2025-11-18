@@ -1,11 +1,10 @@
 const CACHE_NAME = 'salary-calculator-v1';
 const urlsToCache = [
-  '/',
-  '/calcuate-salary/',
-  '/calcuate-salary/index.html',
-  '/calcuate-salary/styles.css',
-  '/calcuate-salary/app.js',
-  '/calcuate-salary/script.js',
+  './index.html',
+  './styles.css',
+  './script.js',        // تم تحديث اسم الملف
+  './icons/icon-192x192.png',
+  './icons/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -21,3 +20,4 @@ self.addEventListener('fetch', event => {
       .then(response => response || fetch(event.request))
   );
 });
+
