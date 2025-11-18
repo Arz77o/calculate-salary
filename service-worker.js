@@ -3,8 +3,9 @@ const urlsToCache = [
   '/',
   '/calcuate-salary/',
   '/calcuate-salary/index.html',
-  '/calcuate-salary/style.css',
-  '/calcuate-salary/script.js'
+  '/calcuate-salary/styles.css',
+  '/calcuate-salary/app.js',
+  '/calcuate-salary/script.js',
 ];
 
 self.addEventListener('install', event => {
