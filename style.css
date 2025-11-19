@@ -40,7 +40,7 @@ a {
 
 .nav__link li {
   display: inline-block;
-  padding: 0px 5px;
+  padding: 0px 10px;
 }
 
 .nav__link li a:hover {
@@ -581,5 +581,6 @@ footer{
   max-width: 100%;
   min-height: auto;
 }
+
 
 
